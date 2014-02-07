@@ -77,12 +77,12 @@ Value <span id="value"></span>
 		$('#msg').html( data.title + ' ready' );
 	  	//console.log( data.title ); // Logs the feed title  
 	});  
-	xively.datastream.subscribe( 168253841, '0', function( event, data ) {  
-  		$('#value').html( data.current_value );  
+	xively.datastream.subscribe( 168253841, '3', function( event, data ) {  
+  		$('#value').html( '=' + data.current_value );  
 	});
 	$( "#click" ).click(function() {
 		// Get feed content  
-		$('#value').xively('get', { feed: 168253841, datastream: '0' });  
+		$('#value').xively('get', { feed: 168253841, datastream: '3' });  
 		// Get realtime updates on a datastream  
 	
 	});
