@@ -77,7 +77,7 @@
         	$('#msg').html( 'loading...' );
 		// Get feed content  
 		// $('.datastream-value').xively('get', { feed: 61916, datastream: 'sine60' });  
-		xively.feed.get( 168253841, {type:'GET'}, function( data ) {  
+		xively.feed.get( 168253841, {blah:'GET'}, function( data ) {  
 			$('#msg').html( data.title + ' ready' );
 		  	console.log( data.title ); // Logs the feed title  
 		});  
