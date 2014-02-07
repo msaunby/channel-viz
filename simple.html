@@ -14,6 +14,7 @@
 <h1>Simple Xively Demo</h1>
 <p>
 <span id="msg"></span>	
+Value <span id="value"></span>
 </p>
 <div id="click">
   Click to load
@@ -72,15 +73,17 @@
 	}
 	
 	xively.setKey( key );  
-	
+	xively.feed.get( 168253841, function( data ) {  
+		$('#msg').html( data.title + ' ready' );
+	  	//console.log( data.title ); // Logs the feed title  
+	});  
 	$( "#click" ).click(function() {
-        	$('#msg').html( 'loading...' );
 		// Get feed content  
-		//$('#msg').xively('get', { feed: 168253841, datastream: '0' });  
-		xively.feed.get( 168253841, function( data ) {  
-			$('#msg').html( data.title + ' ready' );
-		  	//console.log( data.title ); // Logs the feed title  
-		});  
+		//$('#value').xively('get', { feed: 168253841, datastream: '0' });  
+		// Get realtime updates on a datastream  
+		xively.datastream.subscribe( 168253841, 0, function( event, data ) {  
+  		$('#value').html( data.current_value ); // Logs value changes in realtime  
+});
 	});
 	// END Initialization
 	
