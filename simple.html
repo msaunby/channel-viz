@@ -68,10 +68,11 @@
 	xively.setKey( key );  
 	// Get feed content  
 	xively.feed.get( '168253841', function( data ) {  
-  	console.log( data.title ); // Logs the feed title  
+		$('#msg').html( data.title + ' ready' );
+	  	console.log( data.title ); // Logs the feed title  
 	});  
 	// END Initialization
-	$('#msg').html('ready');
+	
 
 	})( jQuery );
 
