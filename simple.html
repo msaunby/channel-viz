@@ -78,7 +78,7 @@ Value <span id="value"></span>
 	  	//console.log( data.title ); // Logs the feed title  
 	});  
 	xively.datastream.subscribe( 168253841, '3', function( event, data ) {  
-  		$('#value').html( '= ' + data.current_value + ' [' + data.datapoints + ']');  
+  		$('#value').html( '= ' + data.current_value + ' [' + data.at + ']');  
 	});
 	$( "#click" ).click(function() {
 		// Get feed content  
