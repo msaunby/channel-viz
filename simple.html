@@ -71,9 +71,10 @@
 		key = defaultKey;
 	}
 	
+	xively.setKey( key );  
+	
 	$( "#click" ).click(function() {
         	$('#msg').html( 'loading...' );
-		xively.setKey( key );  
 		// Get feed content  
 		xively.feed.get( '168253841', function( data ) {  
 			$('#msg').html( data.title + ' ready' );
