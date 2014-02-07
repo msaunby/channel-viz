@@ -15,6 +15,9 @@
 <p>
 <span id="msg"></span>	
 </p>
+<div id="click">
+  Click to load
+</div>
 	<script>
 		//document.write('<script src=' +
 		//('__proto__' in {} ? 'js/zepto' : 'js/jquery') +
@@ -67,12 +70,16 @@
 	if(key == '' && defaultKey != '') {
 		key = defaultKey;
 	}
-	xively.setKey( key );  
-	// Get feed content  
-	xively.feed.get( '168253841', function( data ) {  
-		$('#msg').html( data.title + ' ready' );
-	  	console.log( data.title ); // Logs the feed title  
-	});  
+	
+	$( "#click" ).click(function() {
+        	$('#msg').html( 'loading...' );
+		xively.setKey( key );  
+		// Get feed content  
+		xively.feed.get( '168253841', function( data ) {  
+			$('#msg').html( data.title + ' ready' );
+		  	console.log( data.title ); // Logs the feed title  
+		});  
+	});
 	// END Initialization
 	
 
