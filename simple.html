@@ -10,6 +10,9 @@
 </head>
 <body>
 <h1>Simple Xively Demo</h1>
+<p>
+<span id="msg"></span>	
+</p>
 	<script>
 		document.write('<script src=' +
 		('__proto__' in {} ? 'js/zepto' : 'js/jquery') +
@@ -68,6 +71,7 @@
   	console.log( data.title ); // Logs the feed title  
 	});  
 	// END Initialization
+	$('#msg').html('ready');
 
 	})( jQuery );
 
