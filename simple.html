@@ -76,11 +76,11 @@
 	$( "#click" ).click(function() {
         	$('#msg').html( 'loading...' );
 		// Get feed content  
-		$('#msg').xively('get', { feed: 168253841, datastream: '0' });  
-		//xively.feed.get( 168253841, function( data ) {  
-		//	$('#msg').html( data.title + ' ready' );
-		//  	console.log( data.title ); // Logs the feed title  
-		//});  
+		//$('#msg').xively('get', { feed: 168253841, datastream: '0' });  
+		xively.feed.get( 168253841, function( data ) {  
+			$('#msg').html( data.title + ' ready' );
+		  	//console.log( data.title ); // Logs the feed title  
+		});  
 	});
 	// END Initialization
 	
